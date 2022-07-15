@@ -1,0 +1,135 @@
+*{
+    padding:0;
+    margin:0;
+    --bg_color:#333;
+    --bg_color2:#c5cec6;
+    text-decoration: none;
+    --color:#e24b23;
+
+}
+
+body{
+    background: var(--bg_color);
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100Vh;
+    overflow: hidden;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 450px ;
+    background-image: linear-gradient(to right bottom , #ff8258 , #e24b23) ;
+    
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px  rgba(0, 0, 0, 0.452) ,-2px -4px -8px  rgba(226, 76, 35, 0.3) ;
+    position: relative;
+
+    transform: perspective(100px);
+    transform-style: preserve-3d;
+
+
+
+}
+
+
+.box::after,.box::before{
+    content: 'sony';
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 900;
+    opacity: 0.0;
+    text-transform: uppercase;
+    transition:all 0.5s;
+}
+
+.box::before{
+
+    top: 0px;
+        transform: translateY(-100px);
+        
+        
+        
+        
+    }
+
+.box::after{
+    
+    transform: translateY(100px);
+    content: 'heads';
+    font-size: 5rem;
+    bottom: 0px !important;
+
+}
+
+
+
+.box:hover::after,.box:hover::before{
+    transform: translateY(0);
+    opacity: 0.2;
+
+}
+
+.box .bg{
+    position: absolute;
+    background: #c5cec6f8;
+    width: 100%;
+    height: 300px;
+    opacity: 0.2;
+    z-index: 10;
+    top: 0;
+    border-radius: 30px 30px 500px 500px;
+
+}
+
+.box a{
+    color: white;
+    
+}
+
+.box img{
+    width: 370px;
+    position: absolute;
+    top: -20px;
+    transform: translateZ(70px);
+    filter: drop-shadow(0 0 15px rgba(226, 76, 35, 0.726));
+}
+
+
+.btn{
+    z-index: 1100;
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+    background-color: var(--bg_color2) ;
+    color: var(--color) !important;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight:bold;
+    font-size: 18;
+    opacity: 0.9;
+    /* box-shadow: 2px 2px 8px ; */
+    transform: translate3d(0,40px,70px);
+    transition: all 0.5s 0.2s ;
+    opacity: 0;
+    
+}
+
+
+.box:hover .btn{
+    /* transform: translateY(0); */
+    transform: translate3d(0,0,70px);
+    opacity: 1;
+}
+.btn:hover{
+    background: #fff;
+}
